@@ -16,9 +16,14 @@ import Tooltip from '@mui/material/Tooltip';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import AvalancheLogo from "./../../Assets/image/Avalanche_Fuji.png";
 import FantomLogo from './../../Assets/image/Fantom.png';
+import { Link } from 'react-router-dom';
 
 
+const LinkStyle = {
+   textDecoration: "none",
+   color: "gray",
 
+}
 
 const Topbar = () => {
   const [age, setAge] = useState('');
@@ -71,7 +76,6 @@ const Topbar = () => {
                 </MenuItem>
               <MenuItem value={40} className="gap-2"><img style={{ height: "20px" }} src='https://faucets1.netlify.app/static/media/logo.abae01ba680d97dacc23a0fb5caa4863.svg' />Fantom Testnet</MenuItem>
             </Select>
-            {/* <FormHelperText>Without label</FormHelperText> */}
           </FormControl>
 
           <Button color="secondary" variant="outlined" sx={{ border: "3px solid #9B1FE9", fontWeight: 600 }} onClick={() => setModalShow(true)}>
@@ -93,7 +97,6 @@ const Topbar = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
               >
-                {/* <Avatar sx={{ width: 32, height: 32 }}>M</Avatar> */}
                 <Avatar src="/broken-image.jpg" />
               </IconButton>
             </Tooltip>
@@ -135,18 +138,15 @@ const Topbar = () => {
             anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
           >
             <MenuItem onClick={handleClose}>
-              Log In
+              <Link to={"/login"} style={LinkStyle}>Log In</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              Sign Up
+            <Link to={"/signup"} style={LinkStyle}>Sign Up</Link>
             </MenuItem>
             <MenuItem onClick={handleClose}>
-              FAQ
+            <Link to={"/faq"} style={LinkStyle}>FAQ</Link>
             </MenuItem>
             <Divider />
-            <MenuItem onClick={handleClose}>
-              Logout
-            </MenuItem>
           </Menu>
 
         </Toolbar>
