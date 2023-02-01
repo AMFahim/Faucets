@@ -30,7 +30,7 @@ const SignUp = (props) => {
   return (
     <MainLayout>
       <ThemeProvider theme={theme}>
-        <Container component="main" maxWidth="xs">
+        <Container component="main" maxWidth="xs" sx={{mb: 3}}>
           <CssBaseline />
           <Box
             sx={{
