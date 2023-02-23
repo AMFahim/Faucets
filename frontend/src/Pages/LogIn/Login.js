@@ -29,6 +29,13 @@ const Login = () => {
           password: data.get('password'),
         });
       };
+
+      const googleAuth = () => {
+		window.open(
+			`${process.env.REACT_APP_API_URL}/auth/google/callback`,
+			"_self"
+		);
+	};
     return (
         <MainLayout>
             <ThemeProvider theme={theme}>
@@ -71,7 +78,7 @@ const Login = () => {
                                     <span>Or</span>
 
                                     <div className="flex gap-2">
-                                        <GoogleIcon />
+                                        <GoogleIcon onClick={googleAuth} style={{cursor: "pointer"}}/>
                                         <FacebookIcon className="ms-3" />
                                     </div>
                                 </Grid>
